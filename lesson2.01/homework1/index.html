@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="menu"></div>
+<button id="delete">Delete</button>
+<script src="main.js"></script>
+<script src="MenuItem.js"></script>
+<script src="Menu.js"></script>
+<!--<script src="SubMenu.js"></script>-->
+<script>
+    window.onload = () => {
+        let block = document.getElementById('menu');
+
+        let menu = new Menu('my', 'menu', [
+            new MenuItem('#', 'Главная'),
+            new SubMenu('#', 'Товары','me', 'subMenu', [
+                new MenuItem('#', 'Рекомендации'),
+                new SubMenu('#', 'Категории','me', 'subMenu', [
+                    new MenuItem('#', 'Смартфоны'),
+                    new MenuItem('#', 'Ноутбуки')
+                ]),
+                new MenuItem('#', 'Акции')
+            ]),
+            new SubMenu('#', 'Кабинет', 'me1', 'subMenu', [
+                new MenuItem('#', 'Профиль'),
+                new MenuItem('#', 'Заказы')
+            ]),
+            new MenuItem('#', 'Корзина'),
+
+        ]);
+
+        block.innerHTML = menu.render();
+
+        document.getElementById('delete').addEventListener('click', () => menu.remove());
+    }
+
+</script>
+</body>
+</html>

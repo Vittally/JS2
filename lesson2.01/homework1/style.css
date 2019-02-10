@@ -1,0 +1,50 @@
+.menu {
+    font-size: 16px;
+    list-style-type: none;
+    font-family: sans-serif;
+    padding: 2px;
+    float: left;
+}
+
+.menu > li {
+    display: inline-block;
+}
+
+.menu li a {
+    text-decoration: none;
+    display: block;
+    width: 120px;
+}
+
+.menu li ul {
+    display: none;
+}
+
+.menu li:hover > ul {
+    display: block;
+    list-style-type: none;
+    position: absolute;
+    line-height: 1.5;
+    background-color: #f8f8f8;
+    padding: 10px;
+    box-shadow: 2px 2px 2px gray;
+}
+
+.menu li a:hover {
+    color: orangered;
+    text-decoration: underline;
+}
+
+.menu a:link {
+    color: #447172;
+}
+
+.menu a:visited {
+    color: #447172;
+}
+
+#menu:after {
+    clear: both;
+    content: '';
+    display: block;
+}
